@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>BizPage Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+
+  </head>
+  <body>
+    {% load static %}     
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+    
+    <header id="header" class="fixed-top d-flex align-items-center ">
+      <div class="container-fluid">
+  
+        <div class="row justify-content-center align-items-center">
+          <div class="col-xl-11 d-flex align-items-center justify-content-between">
+            <h1 class="logo"><a href="index.html" style="color:lawngreen;" >MOBILE STORE</a>
+            </h1>
+        
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+  
+            <nav id="navbar" class="navbar">
+             
+        
+              <ul>
+                <li><a class="nav-link scrollto " href="{% url 'sh' %}">Home</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'ap' %} " style="color:white;">Add Product</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'mp' %} " style="color: white;">My Product</a></li>            
+                <li class="dropdown"><a href="#"><span class="material-symbols-outlined">
+                  person
+                  </span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="" class="text-center" style="color: rgb(99, 25, 103);">[Store]</a></li>
+                    <li><a href="" style="font-weight: bold; color: black;">{{request.user.first_name}} {{request.user.last_name}}</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'cp' %}"><button class="btn btn-info">Change <br> Password</button> </a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'lo' %}"><button class="btn btn-danger">Log Out</button> </a></li>
+                    </li>
+                  </ul>
+                </li>       
+              </ul>
+             
+              <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+          </div>
+        </div>
+  
+      </div>
+    </header>
+    {% block shome %}
+    <section id="hero" style="background-color: cyan;">
+      <div class="hero-container">
+        <img src="{% static 'image/phone.jpg' %}" alt="">        
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  
+          <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+  
+          <div class="carousel-inner" role="listbox">
+           
+           
+            <div class="carousel-item active">   
+            
+              <div class="carousel-container">
+                <div class="container">
+                  <h2 class="animate__animated animate__fadeInDown" style="font-size:xx-large; color:white;">WELCOME !!</h2>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>  
+    {% endblock shome %}     
+  </body>
+</html>

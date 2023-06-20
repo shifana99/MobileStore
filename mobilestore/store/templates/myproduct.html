@@ -1,0 +1,31 @@
+{% extends 'storehome.html' %}
+{% block shome %}
+
+      <h1 class="text-center" style="font-size: xx-large; font-weight: bold;color: white;">My Product</h1>
+      <div class="row">
+        {%for i in data%}
+      <div class="col-lg-3">
+        <table class="table table-primary">
+        <div class="card mt-3" style="height: 700px;">
+          <img class="card-img-top" src="{{i.image.url}}" alt="card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.productname}}</h5>
+            <p class="card-title">Price:{{i.price}}</p>
+            <p class="card-title">ram:{{i.ram}}</p>
+            <p class="card-title">rom:{{i.rom}}</p>
+            <p class="card-title">battery:{{i.battery}}</p>
+            <p class="card-title">processor:{{i.processor}}</p>
+            <div class="card-footer">
+              <a href="{% url 'ep' i.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'dp' i.id %}" class="btn btn-danger">Delete</a>          
+            </div> 
+           
+          </div>          
+        </div>       
+      </div> 
+    </table>
+      </div>
+     
+      {% endfor%}
+      </div>    
+      {% endblock shome %}

@@ -1,0 +1,21 @@
+{% extends 'storehome.html' %}
+{% block shome %}
+<div class="row" style="margin-top:7%;">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 class="bg-info text-center" style="color: white;">Add Product</h1>
+
+        <table class="table table-info">
+            {{form.as_table}}
+            <tr>
+              <td colspan="2" class="text-center">
+                <button class="btn btn-success">Submit</button>
+              </td>
+            </tr>
+          </div>
+        </table>    
+    </form>
+   
+      
+   
+ {% endblock shome %}
